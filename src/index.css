@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* fonts */
+  --primary1-fs: 'Spectral', serif;
+  --primary2-fs: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../src//assets/images/hero-bg.jpg);
+  font-family: var(--primary2-fs);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
+  letter-spacing: var(--spacing);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--primary1-fs) !important;
+}
