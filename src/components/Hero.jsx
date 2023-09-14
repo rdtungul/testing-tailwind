@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-none"
+      className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 bg-none mt-20"
     >
       <div className="hero-phrases container mx-auto">
         <h1 className="hero-title text-gray-100 text-7xl">
