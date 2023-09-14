@@ -1,7 +1,3 @@
-import logo from '../assets/images/logo.png'
-import { FaSearch } from 'react-icons/fa'
-import { links, topLinks } from '../data'
-
 const Hero = () => {
   return (
     <section
