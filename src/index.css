@@ -8,6 +8,10 @@
   --primary2-fs: 'Plus Jakarta Sans', sans-serif;
 }
 
+* {
+  margin: 0 auto;
+}
+
 body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../src//assets/images/hero-bg.jpg);
