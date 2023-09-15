@@ -34,3 +34,8 @@ nav {
   margin-bottom: 0.75rem;
   font-family: var(--primary1-fs) !important;
 }
+
+/* NAV */
+.top-nav {
+  padding-right: 20%;
+}
