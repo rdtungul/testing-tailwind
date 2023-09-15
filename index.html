@@ -22,10 +22,10 @@
 
 <body>
   <!-- HERO SECTION -->
-  <section id="hero">
+  <section id="hero" class="sm:pb-10">
     <nav class="">
       <ul
-        class="top-nav md:flex items-center space-x-6 justify-between align-items-right py-4 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 mx-auto">
+        class="top-nav flex items-center space-x-6 justify-between align-items-right py-4 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 mx-auto">
         <li>
           <a class="text-white" aria-current="page" href="/#">
 
@@ -54,7 +54,7 @@
       </ul>
       <div class="flex mt-10 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <a href="#" class="flex items-center">
-          <img src="./src/assets/images/logo.png" alt="Logo" />
+          <img class="logo" src="./src/assets/images/logo.png" alt="Logo" />
         </a>
         <div class="flex items-center lg:order-2">
 
@@ -120,13 +120,13 @@
         </p>
       </div>
 
-      <div class="hero-buttons container mx-auto mt-10">
+      <div class="hero-buttons container mx-auto mt-10 grid md:grid-cols-5 sm:grid-cols-2">
         <button type="button"
-          class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-900 text-white hover:bg-gray-600 hover:text-white py-3 px-8">
+          class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-900 text-white hover:bg-gray-600 hover:text-white py-3 sm:mb-10 px-8">
           See Products
         </button>
         <button type="button"
-          class="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-stone-400  hover:bg-gray-600 hover:text-white py-3 px-8 ml-8">
+          class="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-stone-400  hover:bg-gray-600 hover:text-white py-3 sm:mt-10 px-8 xl:ml-8 sm:ml-0">
           Visualize Your Railings
         </button>
       </div>

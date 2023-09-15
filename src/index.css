@@ -38,4 +38,14 @@ nav {
 /* NAV */
 .top-nav {
   padding-right: 20%;
+  background-color: #1c3051;
+}
+
+@media screen and (max-width: 390px) {
+  body {
+    height: 1080px;
+  }
+  .logo {
+    height: 40px;
+  }
 }
