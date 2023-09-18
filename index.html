@@ -730,17 +730,19 @@
           </button>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- toggle menu icons -->
-      <script>
-        const navLinks = document.querySelector('.nav-links')
-        function onToggleMenu(e) {
-          e.name = e.name === 'menu' ? 'close' : 'menu'
-          navLinks.classList.toggle('top-[1%]')
-          navLinks.classList.toggle('bg-black')
-        }
-      </script>
-      <script type="module" src="/src/main.jsx"></script>
+  <!-- toggle menu icons -->
+  <script>
+    const navLinks = document.querySelector('.nav-links')
+    function onToggleMenu(e) {
+      e.name = e.name === 'menu' ? 'close' : 'menu'
+      navLinks.classList.toggle('top-[1%]')
+      navLinks.classList.toggle('bg-black')
+    }
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
