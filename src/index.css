@@ -36,16 +36,15 @@ nav {
   font-family: var(--primary1-fs) !important;
 }
 
-/* NAV */
-.top-nav {
-  /* padding-right: 20%; */
-}
-
+/* MOBILE RESPONSIVE */
 @media screen and (max-width: 390px) {
   body {
     height: 1080px;
   }
   .logo {
     height: 40px;
+  }
+  h2 {
+    text-align: center;
   }
 }
