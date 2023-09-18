@@ -45,7 +45,7 @@ nav {
     height: 40px;
   }
   h2,
-  #cta1 {
+  .cta {
     text-align: center;
   }
 }
