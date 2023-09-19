@@ -6,6 +6,11 @@
   /* fonts */
   --primary1-fs: 'Spectral', serif;
   --primary2-fs: 'Plus Jakarta Sans', sans-serif;
+  --color-primary: '#1C3051';
+  --color-secondary: '#CDC4B1';
+  --color-paragraph: '#2A2B2A';
+  --color-cta: '#5A2A24';
+  --color-testimonial: '#e5e5e5';
 }
 
 * {
@@ -61,11 +66,22 @@ nav {
     height: 40px;
   }
   h2,
-  .cta {
+  .cta,
+  .keen-slider {
     text-align: center;
   }
   #utility-nav ul > li {
     margin-right: 5%;
     margin-left: 0;
+  }
+  .hero-nav-primary {
+    background-color: #1c3051;
+    padding: 10px 0;
+  }
+  .hero-btn-secondary {
+    display: unset;
+  }
+  .hero-btn-primary {
+    display: none;
   }
 }
