@@ -78,10 +78,21 @@ nav {
     background-color: #1c3051;
     padding: 10px 0;
   }
-  .hero-btn-secondary {
+  .hero-btn-secondary,
+  .search-btn-secondary {
     display: unset;
+    color: white;
   }
-  .hero-btn-primary {
+  .hero-btn-primary,
+  .search-btn-primary {
     display: none;
+  }
+  a.flex.items-center {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .flex.flex-center.items-center {
+    margin: 0;
+    padding-right: 20px;
   }
 }
