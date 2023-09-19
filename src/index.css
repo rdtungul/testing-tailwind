@@ -36,6 +36,22 @@ nav {
   font-family: var(--primary1-fs) !important;
 }
 
+[v-cloak],
+[x-cloak],
+[x-cloak=''] {
+  display: none !important;
+}
+#mobile-menu-nav:not(.mm-spn--navbar) {
+  display: none;
+}
+#gallery-modal {
+  opacity: 1;
+  transition: opacity ease-in-out 0.25s;
+}
+#gallery-modal.htmx-request {
+  opacity: 0;
+}
+
 /* MOBILE RESPONSIVE */
 @media screen and (max-width: 390px) {
   body {
