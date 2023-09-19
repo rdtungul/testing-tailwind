@@ -31,18 +31,18 @@
       <div id="utility-nav" class="bg-primary">
         <div class="container mx-auto overflow-hidden">
 
-          <ul class="relative flex max-w-screen-lg flex align-items-right space-x-6 justify-between py-4 mx-auto">
+          <ul class="relative flex max-w-screen-lg flex align-items-right space-x-5 justify-between py-4 mx-auto">
             <li>
               <a class="un-text1 text-white" aria-current="page" href="/#">
               </a>
             </li>
             <li>
-              <a class="text-white hover:text-secondary" aria-current="page" href="/#">
+              <a class="text-white hover:text-secondary" aria-current="page" href="/#cta1">
                 Dealer Portal
               </a>
             </li>
             <li>
-              <a class="text-white hover:text-secondary" aria-current="page" href="/#">
+              <a class="text-white hover:text-secondary" aria-current="page" href="/#benefits">
                 Training
               </a>
             </li>
@@ -55,6 +55,18 @@
               <a class="text-white hover:text-secondary" aria-current="page" href="/#">
                 1-888-704-7130
               </a>
+            </li>
+            <li class="search-btn-secondary hidden">
+              <form action="" class="relative mx-auto w-max">
+                <input type="search"
+                  class="search-btn-secondary2 cursor-pointer text-white relative z-10  bg-transparent outline-none focus:w-10 w-10 focus:cursor-text focus:border-white focus:pl-15 focus:pr-4" />
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="absolute inset-y-0 my-auto mr-5 h-10 w-14 border-r border-transparent stroke-white pr-8"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </form>
             </li>
           </ul>
         </div>
@@ -73,16 +85,16 @@
               class="flex justify-center flex-wrap content-center md:flex-row flex-col md:items-center md:gap-[1vw] gap-8 ">
 
               <li>
-                <a href="#" class="block text-white  hover:text-secondary">Railing</a>
+                <a href="#products" class="block text-white  hover:text-secondary">Railing</a>
               </li>
               <li>
-                <a href="#" class="block text-white  hover:text-secondary">Fencing</a>
+                <a href="#products" class="block text-white  hover:text-secondary">Fencing</a>
               </li>
               <li>
-                <a href="#" class="block text-white  hover:text-secondary">Lighting</a>
+                <a href="#products" class="block text-white  hover:text-secondary">Lighting</a>
               </li>
               <li>
-                <a href="#" class="block text-white  hover:text-secondary">Inspiration</a>
+                <a href="#inspiration" class="block text-white  hover:text-secondary">Inspiration</a>
               </li>
               <li>
                 <a href="#" class="block text-white  hover:text-secondary">Why
@@ -120,6 +132,14 @@
 
           </div>
         </div>
+      </div>
+
+      <div class="absolute w-full hidden bg-white shadow-xl" id="search-content">
+        <div class="container mx-auto py-4 text-black">
+          <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
+            class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
+        </div>
+
       </div>
 
     </nav>
