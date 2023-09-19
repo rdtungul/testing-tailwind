@@ -81,13 +81,11 @@ nav {
     background-color: #1c3051;
     padding: 10px 0;
   }
-  .hero-btn-secondary,
-  .search-btn-secondary {
+  .hero-btn-secondary {
     display: unset;
     color: white;
   }
-  .hero-btn-primary,
-  .search-btn-primary {
+  .hero-btn-primary {
     display: none;
   }
   a.flex.items-center {
@@ -100,5 +98,8 @@ nav {
   }
   footer.testimonial-title {
     margin: 0 !important;
+  }
+  #utility-nav {
+    padding-right: 5%;
   }
 }
