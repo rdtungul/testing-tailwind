@@ -104,8 +104,8 @@ nav {
     padding-left: 20px;
   }
   .flex.flex-center.items-center {
-    margin: 0;
-    padding-right: 20px;
+    margin: 1px;
+    padding-right: 0;
   }
   footer.testimonial-title {
     margin: 0 !important;
