@@ -32,18 +32,18 @@
                 <div class="container mx-auto overflow-hidden">
 
                     <ul
-                        class="relative flex max-w-screen-lg flex align-items-right space-x-6 justify-between py-4 mx-auto">
+                        class="relative flex max-w-screen-lg flex align-items-right space-x-5 justify-between py-4 mx-auto">
                         <li>
                             <a class="un-text1 text-white" aria-current="page" href="/#">
                             </a>
                         </li>
                         <li>
-                            <a class="text-white hover:text-secondary" aria-current="page" href="/#">
+                            <a class="text-white hover:text-secondary" aria-current="page" href="/#cta1">
                                 Dealer Portal
                             </a>
                         </li>
                         <li>
-                            <a class="text-white hover:text-secondary" aria-current="page" href="/#">
+                            <a class="text-white hover:text-secondary" aria-current="page" href="/#benefits">
                                 Training
                             </a>
                         </li>
@@ -61,8 +61,8 @@
                 </div>
             </div>
 
-            <div class="container mx-auto overflow-hidden mt-10">
-                <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
+            <div class="container mx-auto overflow-hidden">
+                <div class="hero-nav-primary max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
                     <a href="#" class="flex items-center">
                         <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
                     </a>
@@ -74,16 +74,16 @@
                             class="flex justify-center flex-wrap content-center md:flex-row flex-col md:items-center md:gap-[1vw] gap-8 ">
 
                             <li>
-                                <a href="#" class="block text-white  hover:text-secondary">Railing</a>
+                                <a href="#products" class="block text-white  hover:text-secondary">Railing</a>
                             </li>
                             <li>
-                                <a href="#" class="block text-white  hover:text-secondary">Fencing</a>
+                                <a href="#products" class="block text-white  hover:text-secondary">Fencing</a>
                             </li>
                             <li>
-                                <a href="#" class="block text-white  hover:text-secondary">Lighting</a>
+                                <a href="#products" class="block text-white  hover:text-secondary">Lighting</a>
                             </li>
                             <li>
-                                <a href="#" class="block text-white  hover:text-secondary">Inspiration</a>
+                                <a href="#inspiration" class="block text-white  hover:text-secondary">Inspiration</a>
                             </li>
                             <li>
                                 <a href="#" class="block text-white  hover:text-secondary">Why
@@ -92,31 +92,44 @@
                             <li>
                                 <a href="#" class="block text-white  hover:text-secondary">Resources</a>
                             </li>
+                            <li>
+                                <a href="#"
+                                    class="hero-btn-secondary hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
+                                    to Buy</a>
+                            </li>
                         </ul>
                     </div>
 
 
-                    <div class="flex items-center">
+                    <div class="flex flex-center items-center">
+                        <div class="grid grid-cols-1 gap-5">
+                            <ion-icon onclick="onToggleMenu(this)" name="menu"
+                                class="text-3xl ml-5 h-18 w-18 cursor-pointer md:hidden text-white"></ion-icon>
+                        </div>
                         <a href="#"
-                            class="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
+                            class="hero-btn-primary text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
                             to Buy</a>
                         <form action="" class="relative mx-auto w-max">
                             <input type="search"
-                                class="peer cursor-pointer text-white relative z-10  bg-transparent pl-12 outline-none focus:w-auto w-10 focus:cursor-text focus:border-white focus:pl-16 focus:pr-4" />
+                                class="search-btn-primary cursor-pointer text-white relative z-10  bg-transparent pl-12 outline-none focus:w-20 w-10 focus:cursor-text focus:border-white focus:pl-0 focus:pr-4" />
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                class="absolute inset-y-0 my-auto mr-5 ml-2 h-10 w-14 border-r border-transparent stroke-white px-3.5"
+                                class="search-btn-primary absolute inset-y-0 my-auto mr-5 ml-2 h-10 w-14 border-r border-transparent stroke-white px-3.5"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </form>
 
-                        <div class="flex items-center gap-6">
-                            <ion-icon onclick="onToggleMenu(this)" name="menu"
-                                class="text-3xl ml-5 h-18 w-18 cursor-pointer md:hidden text-white"></ion-icon>
-                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="absolute w-full hidden bg-white shadow-xl" id="search-content">
+                <div class="container mx-auto py-4 text-black">
+                    <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
+                        class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
+                </div>
+
             </div>
 
         </nav>
@@ -367,19 +380,15 @@
         <div class="mx-auto text-left max-w-[95%] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
 
 
-            <div class="lg-mx-6 mt-8 lg:col-span-2 lg:mx-0">
+            <div class="lg-mx-6 my-4 lg:col-span-2 lg:mx-0">
                 <div id="keen-slider" class="keen-slider">
 
                     <!-- slider1 -->
                     <div class="keen-slider__slide ">
                         <blockquote
-                            class="flex h-full flex-col w-[80%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
+                            class="flex h-full flex-col xl:w-[80%] sm:w-[100%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
                             <div>
-
-
                                 <div class="mt-4">
-
-
                                     <p class="mt-4 leading-relaxed text-gray-700">
                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nihil
                                         officia quam sed ipsa
@@ -390,7 +399,7 @@
                                 </div>
                             </div>
 
-                            <footer class="mt-4 text-sm sm:mt-6">
+                            <footer class="testimonial-title mt-4 text-sm sm:mt-6">
                                 <h4 class="text-2xl font-bold text-cta sm:text-xl">
                                     John Smith
                                 </h4>
@@ -402,7 +411,7 @@
                     <!-- slider2 -->
                     <div class="keen-slider__slide ">
                         <blockquote
-                            class="flex h-full flex-col w-[80%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
+                            class="flex h-full flex-col xl:w-[80%] sm:w-[100%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
                             <div>
 
 
@@ -419,7 +428,7 @@
                                 </div>
                             </div>
 
-                            <footer class="mt-4 text-sm sm:mt-6">
+                            <footer class="testimonial-title mt-4 text-sm sm:mt-6">
                                 <h4 class="text-2xl font-bold text-cta sm:text-xl">
                                     John Smith
                                 </h4>
@@ -431,7 +440,7 @@
                     <!-- slider3 -->
                     <div class="keen-slider__slide ">
                         <blockquote
-                            class="flex h-full flex-col w-[80%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
+                            class="flex h-full flex-col xl:w-[80%] sm:w-[100%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
                             <div>
 
 
@@ -448,7 +457,7 @@
                                 </div>
                             </div>
 
-                            <footer class="mt-4 text-sm sm:mt-6">
+                            <footer class="testimonial-title mt-4 text-sm sm:mt-6">
                                 <h4 class="text-2xl font-bold text-cta sm:text-xl">
                                     John Smith
                                 </h4>
@@ -858,7 +867,7 @@
 
 
     <!-- 2ND CTA -->
-    <section id="cta2" class="bg-white pb-20">
+    <section id="cta2" class="bg-white">
         <div class="cta grid xl:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none  items-center bg-cta">
             <img src="./src/assets/images/cta1.jpg" alt="cta2" class="w-full">
             <div class="px-[10%] p-8 text-white">
