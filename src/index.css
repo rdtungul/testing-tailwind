@@ -21,8 +21,6 @@ body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../src//assets/images/hero-bg.jpg);
   font-family: var(--primary2-fs);
-  background-repeat: no-repeat;
-  background-size: cover;
   min-height: 1080px;
   height: 100vh;
   width: 100vw;
@@ -57,6 +55,16 @@ nav {
   opacity: 0;
 }
 
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1024px) {
+  .hero-navigations {
+    background-color: #1c3051;
+  }
+  .hero-btn-primary {
+    display: none;
+  }
+}
+
 /* MOBILE RESPONSIVE */
 @media screen and (max-width: 390px) {
   body {
@@ -67,6 +75,9 @@ nav {
   }
   .hero-title {
     font-size: 3.4rem;
+  }
+  h2 {
+    font-size: 2.5rem !important;
   }
   h2,
   .cta,

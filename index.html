@@ -23,15 +23,15 @@
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 
-<body class="font-[Plus Jakarta Sans]">
-  <!-- HERO SECTION -->
-  <section id="hero" class="relative">
+<body class="font-[Plus Jakarta Sans] bg-cover no-repeat">
+  <!-- NAVIGATION SECTION -->
+  <section id="hero">
     <nav class="hero-navigations">
 
-      <div id="utility-nav" class="bg-primary">
-        <div class="container mx-auto overflow-hidden">
+      <div id="utility-nav" class=" bg-primary">
+        <div class="container sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:w-full">
 
-          <ul class="relative flex max-w-screen-lg flex align-items-right space-x-5 justify-between py-4 mx-auto">
+          <ul class="flex align-items-right space-x-5 md:mr-[100px] lg:mr-[120px] justify-between py-4 mx-auto">
             <li>
               <a class="un-text1 text-white" aria-current="page" href="/#">
               </a>
@@ -60,14 +60,14 @@
         </div>
       </div>
 
-      <div class="container mx-auto overflow-hidden">
+      <div class="container mx-auto overflow-hidden lg:mt-5 xl:mt-5">
         <div class="hero-nav-primary max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
           <a href="#" class="flex items-center">
             <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
           </a>
 
           <div
-            class="nav-links md:static absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:w-auto w-full flex justify-center">
+            class="nav-links sm:static md:hidden lg:inline absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:mr-[120px] md:w-auto w-full flex justify-center">
 
             <ul
               class="flex justify-center flex-wrap content-center md:flex-row flex-col md:items-center md:gap-[1vw] gap-8 ">
@@ -103,11 +103,11 @@
           <div class="flex flex-center items-center">
             <div class="grid grid-cols-1 gap-5">
               <ion-icon onclick="onToggleMenu(this)" name="menu"
-                class="text-3xl ml-5 h-18 w-18 cursor-pointer md:hidden text-white"></ion-icon>
+                class="text-3xl ml-5 h-18 w-18 cursor-pointer lg:hidden text-white"></ion-icon>
             </div>
-            <a href="#"
-              class="hero-btn-primary text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
-              to Buy</a>
+            <button href="#"
+              class="hero-btn-primary md-hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
+              to Buy</button>
             <form action="" class="relative mx-auto w-max">
               <input type="search"
                 class="search-btn-primary cursor-pointer text-white relative z-10  bg-transparent pl-12 outline-none focus:w-20 w-10 focus:cursor-text focus:border-white focus:pl-0 focus:pr-4" />
@@ -117,8 +117,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </form>
-
           </div>
+
         </div>
       </div>
 
@@ -127,15 +127,17 @@
           <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
             class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
         </div>
-
       </div>
-
     </nav>
+    </div>
+  </section>
 
-    <div
-      class="max-w-screen-xl mx-auto sm:p-10 md:p-16 flex flex-wrap items-center justify-between mx-auto p-4 bg-none my-20">
 
-      <div class="hero-phrases container mx-auto">
+  <!-- HERO SECTION -->
+  <section id="hero" class="container sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:w-full">
+    <div class="container flex flex-wrap items-center justify-between mx-auto p-4 bg-none my-20">
+
+      <div class="hero-phrases mx-auto">
         <h1 class="hero-title text-gray-100 text-7xl">
           Elegant Custom <br />Railings to Transform <br /> Your Space
         </h1>
@@ -158,8 +160,6 @@
       </div>
 
     </div>
-    </div>
-
   </section>
 
 
@@ -338,7 +338,7 @@
 
 
   <!-- TESTIMONIALS -->
-  <section id="testimonials" class="bg-white container mx-auto overflow-hidden">
+  <section id="testimonials" class="bg-white">
     <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
 
     <script type="module">
@@ -463,7 +463,7 @@
 
 
   <!-- INSPIRATION SECTION -->
-  <section id="inspiration" class="bg-white container mx-auto overflow-hidden">
+  <section id="inspiration" class="bg-white">
     <hr class="max-w-screen-xl mx-auto">
     <div class="max-w-screen-xl w-[90%] mx-auto sm:p-10 md:p-16">
       <h2 class="hero-title text-black text-5xl my-10">
