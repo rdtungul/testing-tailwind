@@ -19,6 +19,8 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
   <!-- menu icon -->
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
@@ -71,7 +73,7 @@
           </a>
 
           <div
-            class="nav-links sm:static md:hidden lg:inline absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:mr-[120px] md:w-auto w-full flex justify-center px-5">
+            class="nav-links sm:static md:hidden lg:inline absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:mr-[10px] md:w-auto w-full flex justify-center px-5">
 
             <ul
               class="flex justify-center flex-wrap content-center md:flex-row flex-col md:items-center md:gap-[1vw] gap-8 ">
@@ -275,9 +277,8 @@
 
       </div>
     </div>
-
-
   </section>
+
 
 
   <!-- BENEFITS SECTION -->
@@ -369,32 +370,7 @@
   <section id="testimonials" class="bg-white">
     <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
 
-    <script type="module">
-      import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
 
-      const keenSlider = new KeenSlider(
-        '#keen-slider',
-        {
-          loop: true,
-          slides: {
-            origin: 'center',
-            perView: 1,
-            spacing: 16,
-          },
-          breakpoints: {
-            '(min-width: 1024px)': {
-              slides: {
-                origin: 'auto',
-                perView: 2.5,
-                spacing: 15,
-              },
-            },
-          },
-        },
-        []
-      )
-
-    </script>
 
     <div class="mx-auto text-left max-w-[95%] px-4 py-12 sm:px-6 lg:mr-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
 
@@ -963,7 +939,39 @@
       searchIcon2.classList.add('hidden')
       searchContainer.classList.remove('search-bg')
     })
+
   </script>
+
+  <script type="module">
+    import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+
+    const keenSlider = new KeenSlider(
+      '#keen-slider',
+      {
+        loop: true,
+        slides: {
+          origin: 'center',
+          perView: 1,
+          spacing: 16,
+        },
+        breakpoints: {
+          '(min-width: 1024px)': {
+            slides: {
+              origin: 'auto',
+              perView: 2.5,
+              spacing: 15,
+            },
+          },
+        },
+
+      },
+      []
+    )
+
+  </script>
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

@@ -19,20 +19,22 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
     <!-- menu icon -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 
-<body class="font-[Plus Jakarta Sans]">
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative">
+<body class="font-[Plus Jakarta Sans] bg-cover no-repeat">
+    <!-- NAVIGATION SECTION -->
+    <section id="hero">
         <nav class="hero-navigations">
 
-            <div id="utility-nav" class="bg-primary">
-                <div class="container mx-auto overflow-hidden">
+            <div id="utility-nav" class=" bg-primary">
+                <div class="container sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:w-full">
 
                     <ul
-                        class="relative flex max-w-screen-lg flex align-items-right space-x-5 justify-between py-4 mx-auto">
+                        class="flex align-items-right space-x-5 md:mr-[100px] lg:mr-[120px] justify-between py-4 mx-auto">
                         <li>
                             <a class="un-text1 text-white" aria-current="page" href="/#">
                             </a>
@@ -57,22 +59,25 @@
                                 1-888-704-7130
                             </a>
                         </li>
+                        <li>
+                            <a class="un-text2 text-white sm:hidden lg:mr-5 xl:mr-5" aria-current="page" href="/#">
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="container mx-auto overflow-hidden">
+            <div class="container mx-auto overflow-hidden lg:mt-5 xl:mt-5">
                 <div class="hero-nav-primary max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
                     <a href="#" class="flex items-center">
                         <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
                     </a>
 
                     <div
-                        class="nav-links md:static absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:w-auto w-full flex justify-center">
+                        class="nav-links sm:static md:hidden lg:inline absolute md:min-h-fit min-h-[100vh] top-[-100%] bottom-[100%] md:mr-[10px] md:w-auto w-full flex justify-center px-5">
 
                         <ul
                             class="flex justify-center flex-wrap content-center md:flex-row flex-col md:items-center md:gap-[1vw] gap-8 ">
-
                             <li>
                                 <a href="#products" class="block text-white  hover:text-secondary">Railing</a>
                             </li>
@@ -87,7 +92,8 @@
                             </li>
                             <li>
                                 <a href="#" class="block text-white  hover:text-secondary">Why
-                                    Key-Link</a>
+                                    Key-Link
+                                </a>
                             </li>
                             <li>
                                 <a href="#" class="block text-white  hover:text-secondary">Resources</a>
@@ -101,43 +107,61 @@
                     </div>
 
 
-                    <div class="flex flex-center items-center">
+                    <div class="sb-container flex flex-center items-center">
+                        <!-- search icon -->
                         <div class="grid grid-cols-1 gap-5">
                             <ion-icon onclick="onToggleMenu(this)" name="menu"
-                                class="text-3xl ml-5 h-18 w-18 cursor-pointer md:hidden text-white"></ion-icon>
+                                class="text-3xl ml-5 h-18 w-18 cursor-pointer lg:hidden text-white"></ion-icon>
                         </div>
-                        <a href="#"
-                            class="hero-btn-primary text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
-                            to Buy</a>
-                        <form action="" class="relative mx-auto w-max">
-                            <input type="search"
-                                class="search-btn-primary cursor-pointer text-white relative z-10  bg-transparent pl-12 outline-none focus:w-20 w-10 focus:cursor-text focus:border-white focus:pl-0 focus:pr-4" />
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="search-btn-primary absolute inset-y-0 my-auto mr-5 ml-2 h-10 w-14 border-r border-transparent stroke-white px-3.5"
-                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </form>
 
+                        <!-- buy button primary -->
+                        <button href="#"
+                            class="hero-btn-primary md-hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 z-1000 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
+                            to Buy</button>
+
+                        <!-- search functionality -->
+                        <div class="flex justify-center items-center search-container pl-2 relative sm:mr-5">
+                            <div class="search-icon-light px-3 focus:bg-white py-4 relative z-10">
+                                <svg width="25" height="25" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="search-icon-dark hidden px-3 focus:bg-white py-4 relative z-10">
+                                <svg width="25" height="25" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
+                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <form>
+                                <input
+                                    class="search-input h-10 text-md outline-none focus:bg-white mr-2 focus:outline-none:focus"
+                                    type="search" autocomplete="off" spellcheck="false" aria-live="polite" required
+                                    placeholder="Search">
+                                <button type="reset" class="close-icon"></button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="absolute w-full hidden bg-white shadow-xl" id="search-content">
-                <div class="container mx-auto py-4 text-black">
-                    <input id="searchfield" type="search" placeholder="Search..." autofocus="autofocus"
-                        class="w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl">
                 </div>
-
             </div>
 
         </nav>
+        </div>
+    </section>
 
-        <div
-            class="max-w-screen-xl mx-auto sm:p-10 md:p-16 flex flex-wrap items-center justify-between mx-auto p-4 bg-none my-20">
 
-            <div class="hero-phrases container mx-auto">
+    <!-- HERO SECTION -->
+    <section id="hero" class="container md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+        <div class="flex flex-wrap items-center px-5 justify-between mx-auto bg-none my-20 md:px-0 lg:px-0">
+
+            <div class="hero-phrases mx-auto">
                 <h1 class="hero-title text-gray-100 text-7xl">
                     Elegant Custom <br />Railings to Transform <br /> Your Space
                 </h1>
@@ -160,155 +184,165 @@
             </div>
 
         </div>
-        </div>
-
     </section>
 
 
     <!-- PRODUCTS SECTION -->
     <section id="products" class="bg-white pb-20 pt-10">
         <!-- Component Code -->
-        <div class="flex mt-10 flex-wrap justify-between items-center mx-auto max-w-screen-xl sm:p-10">
-            <h2 class="mr-5 container hero-title text-black text-5xl">
+        <div
+            class="flex mt-10 flex-wrap justify-between items-center mx-auto md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl py-10">
+            <h2 class="mr-5 container hero-title text-black text-5xl md:text-center lg:text-left">
                 Our Products
             </h2>
             <!-- product image 1 -->
             <div class="grid grid-cols-1 mt-5 md:grid-cols-5 sm:grid-cols-2 gap-3">
-                <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
-                    style="background-image:url(./src/assets/images/product-img1.jpg);">
-                    <div
-                        class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                <a href="#">
+                    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center hover:grayscale"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Aluminum
+                                Railing
+                            </h3>
+                        </main>
                     </div>
-                    <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
-                    </div>
-                    <main class="p-5 z-10">
-                        <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
-                            Aluminum
-                            Railing
-                        </h3>
-                    </main>
-                </div>
+                </a>
 
                 <!-- product image 2 -->
-                <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
-                    style="background-image:url(./src/assets/images/product-img1.jpg);">
-                    <div
-                        class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                <a href="#">
+                    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Horizontal Cable
+                                Railing
+                            </h3>
+                        </main>
                     </div>
-                    <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
-                    </div>
-                    <main class="p-5 z-10">
-                        <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
-                            Horizontal Cable
-                            Railing
-                        </h3>
-                    </main>
-                </div>
-
-                <!-- product image 2 -->
-                <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center hover:grayscale"
-                    style="background-image:url(./src/assets/images/product-img1.jpg);">
-                    <div
-                        class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
-                    </div>
-                    <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
-                    </div>
-                    <main class="p-5 z-10">
-                        <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
-                            Vertical Cable
-                            Railing
-                        </h3>
-                    </main>
-                </div>
+                </a>
 
                 <!-- product image 3 -->
-                <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
-                    style="background-image:url(./src/assets/images/product-img1.jpg);">
-                    <div
-                        class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                <a href="#">
+                    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center hover:grayscale"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Vertical Cable
+                                Railing
+                            </h3>
+                        </main>
                     </div>
-                    <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
-                    </div>
-                    <main class="p-5 z-10">
-                        <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
-                            Aluminum
-                            Fencing
-                        </h3>
-                    </main>
-                </div>
+                </a>
 
-                <!-- product image 2 -->
-                <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
-                    style="background-image:url(./src/assets/images/product-img1.jpg);">
-                    <div
-                        class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                <!-- product image 4 -->
+                <a href="#">
+                    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center  hover:grayscale"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Aluminum
+                                Fencing
+                            </h3>
+                        </main>
                     </div>
-                    <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                </a>
+
+                <!-- product image 5 -->
+                <a href="#">
+                    <div class="relative h-64 w-full flex items-end justify-start text-left bg-cover bg-center hover:grayscale"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Lighting
+                            </h3>
+                        </main>
                     </div>
-                    <main class="p-5 z-10">
-                        <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
-                            Lighting
-                        </h3>
-                    </main>
-                </div>
+                </a>
+
+
 
             </div>
         </div>
-
-
     </section>
 
 
+
     <!-- BENEFITS SECTION -->
-    <section id="benefits" class="dark:bg-secondary pb-20 pt-10">
+    <section id="benefits" class="bg-secondary pb-20 pt-10">
         <!-- Component Code -->
-        <div class="max-w-screen-xl mx-auto sm:p-10 md:p-16">
-            <h2 class="hero-title text-black text-5xl mt-5">
+        <div class="md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl py-10">
+            <h2 class="hero-title text-black text-5xl mt-5 md:text-center lg:text-left">
                 Benefits
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-3 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
                 <div class="bg-none h-40 w-64 rounded-md">
-                    <div class="flex justify-center items-center leading-none">
+                    <div class="flex justify-center items-center">
                         <img src="./src/assets/images/benefit1.svg" alt="benefit1" class="w-full h-10">
                     </div>
                     <div class="p-3">
                         <p class="block mb-5 text-center">Benefit 1</p>
-                        <p class="text-xs tracking-tighter text-gray-600 text-center">
+                        <p class="text-md tracking-tighter text-gray-600 text-center">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eius porro amet odio!
                         </p>
                     </div>
                 </div>
 
                 <div class="bg-none h-40 w-64 rounded-md">
-                    <div class="flex justify-center items-center leading-none">
+                    <div class="flex justify-center items-center">
                         <img src="./src/assets/images/training.svg" alt="benefit1" class="w-full h-10">
                     </div>
                     <div class="p-3">
                         <p class="block mb-5 text-center">Training</p>
-                        <p class="text-xs tracking-tighter text-gray-600 text-center">
+                        <p class="text-md tracking-tighter text-gray-600 text-center">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eius porro amet odio!
                         </p>
                     </div>
                 </div>
                 <div class="bg-none h-40 w-64 rounded-md">
-                    <div class="flex justify-center items-center leading-none">
+                    <div class="flex justify-center items-center">
                         <img src="./src/assets/images/pci.svg" alt="benefit1" class="w-full h-10">
                     </div>
                     <div class="p-3">
                         <p class="block mb-5 text-center">PCI 4000 Certified</p>
-                        <p class="text-xs tracking-tighter text-gray-600 text-center">
+                        <p class="text-md tracking-tighter text-gray-600 text-center">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eius porro amet odio!
                         </p>
                     </div>
                 </div>
                 <div class="bg-none h-40 w-64 rounded-md">
-                    <div class="flex justify-center items-center leading-none">
+                    <div class="flex justify-center items-center">
                         <img src="./src/assets/images/benefit2.svg" alt="benefit1" class="w-full h-10">
                     </div>
                     <div class="p-3">
                         <p class="block mb-5 text-center">Benefit 1</p>
-                        <p class="text-xs tracking-tighter text-gray-600 text-center">
+                        <p class="text-md tracking-tighter text-gray-600 text-center">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus eius porro amet odio!
                         </p>
                     </div>
@@ -321,7 +355,8 @@
 
     <!-- 1ST CTA -->
     <section id="cta1" class="bg-white">
-        <div class="cta grid xl:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none items-center bg-primary">
+        <div
+            class="cta grid md:grid-cols-2 xl:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none items-center bg-primary">
             <img src="./src/assets/images/cta1.jpg" alt="cta1" class="w-full">
             <div class="px-[10%] p-8 text-white">
                 <div class="mt-8 mb-8">
@@ -345,46 +380,19 @@
 
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" class="bg-white container mx-auto overflow-hidden">
+    <section id="testimonials" class="bg-white">
         <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
 
-        <script type="module">
-            import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
-
-            const keenSlider = new KeenSlider(
-                '#keen-slider',
-                {
-                    loop: true,
-                    slides: {
-                        origin: 'center',
-                        perView: 1.25,
-                        spacing: 16,
-                    },
-                    breakpoints: {
-                        '(min-width: 1024px)': {
-                            slides: {
-                                origin: 'auto',
-                                perView: 2.5,
-                                spacing: 15,
-                            },
-                        },
-                    },
-                },
-                []
-            )
-
-            const keenSliderPrevious = document.getElementById('keen-slider-previous')
-            const keenSliderNext = document.getElementById('keen-slider-next')
-        </script>
-
-        <div class="mx-auto text-left max-w-[95%] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
 
 
-            <div class="lg-mx-6 my-4 lg:col-span-2 lg:mx-0">
+        <div class="mx-auto text-left max-w-[95%] px-4 py-12 sm:px-6 lg:mr-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
+
+
+            <div class="lg-mx-6 my-4 lg:col-span-2.5 lg:mx-0">
                 <div id="keen-slider" class="keen-slider">
 
                     <!-- slider1 -->
-                    <div class="keen-slider__slide ">
+                    <div class="keen-slider__slide relative">
                         <blockquote
                             class="flex h-full flex-col xl:w-[80%] sm:w-[100%] justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12 bg-testimonial">
                             <div>
@@ -400,7 +408,7 @@
                             </div>
 
                             <footer class="testimonial-title mt-4 text-sm sm:mt-6">
-                                <h4 class="text-2xl font-bold text-cta sm:text-xl">
+                                <h4 class="text-2xl font-bold text-cta mt-5 sm:text-xl">
                                     John Smith
                                 </h4>
                                 Architect
@@ -470,7 +478,7 @@
 
 
     <!-- INSPIRATION SECTION -->
-    <section id="inspiration" class="bg-white container mx-auto overflow-hidden">
+    <section id="inspiration" class="bg-white">
         <hr class="max-w-screen-xl mx-auto">
         <div class="max-w-screen-xl w-[90%] mx-auto sm:p-10 md:p-16">
             <h2 class="hero-title text-black text-5xl my-10">
@@ -868,7 +876,7 @@
 
     <!-- 2ND CTA -->
     <section id="cta2" class="bg-white">
-        <div class="cta grid xl:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none  items-center bg-cta">
+        <div class="cta grid md:grid-cols-2 xl:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none  items-center bg-cta">
             <img src="./src/assets/images/cta1.jpg" alt="cta2" class="w-full">
             <div class="px-[10%] p-8 text-white">
                 <div class="mt-8 mb-8">
@@ -896,8 +904,87 @@
             e.name = e.name === 'menu' ? 'close' : 'menu'
             navLinks.classList.toggle('top-[1%]')
             navLinks.classList.toggle('bg-primary')
+
+
         }
+
+
+        // SEARCH FUNCTIONS
+        const searchContainer = document.querySelector(`.search-container`)
+        const searchIcon1 = document.querySelector(`.search-icon-light`)
+        const searchIcon2 = document.querySelector(`.search-icon-dark`)
+        const searchInput = document.querySelector(`.search-input`)
+
+        const toggleSearch = event => {
+            event.stopPropagation();
+
+            if (!event.target.closest('.search-input')) {
+
+                searchInput.classList.toggle('active');
+
+                searchInput.classList.contains('active')
+                    ? document.addEventListener('click', toggleSearch)
+                    : document.removeEventListener('click', toggleSearch);
+            }
+
+            // search input toggle on/off
+            if (!event.target.closest('.search-input')) {
+
+                searchInput.classList.toggle('search-bg');
+
+                searchInput.classList.contains('search-bg')
+                    ? document.addEventListener('click', toggleSearch)
+                    : document.removeEventListener('click', toggleSearch);
+            }
+
+            // interchanging color icon
+            searchContainer.classList.add('search-bg')
+            searchIcon1.classList.add('hidden')
+            searchIcon2.classList.remove('hidden')
+
+        }
+
+        // interchanging icon color functions
+        searchIcon1.addEventListener('click', toggleSearch);
+        window.addEventListener('click', (e) => {
+            e.preventDefault()
+            searchIcon1.classList.remove('hidden')
+            searchIcon2.classList.add('hidden')
+            searchContainer.classList.remove('search-bg')
+        })
+
     </script>
+
+    <script type="module">
+        import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm'
+
+        const keenSlider = new KeenSlider(
+            '#keen-slider',
+            {
+                loop: true,
+                slides: {
+                    origin: 'center',
+                    perView: 1,
+                    spacing: 16,
+                },
+                breakpoints: {
+                    '(min-width: 1024px)': {
+                        slides: {
+                            origin: 'auto',
+                            perView: 2.5,
+                            spacing: 15,
+                        },
+                    },
+                },
+
+            },
+            []
+        )
+
+    </script>
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
 </body>
 
