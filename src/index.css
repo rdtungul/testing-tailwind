@@ -114,7 +114,7 @@ input[type='search']::-webkit-search-cancel-button {
 /* SWIPER JS */
 .swiper {
   width: 100%;
-  height: 50vh;
+  height: 70vh;
 }
 
 .swiper-slide {
