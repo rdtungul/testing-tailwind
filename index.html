@@ -95,39 +95,40 @@
         <a href="./index.html" class="flex items-center">
           <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
         </a>
-        <!-- Search Bar Mobile -->
-        <div class="flex justify-center items-center search-container pl-2 relative sm:mr-5">
-
-          <div class="search-icon-dark hidden px-3 focus:bg-white text-black py-4 relative z-10">
-            <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <form>
-            <input
-              class="search-input h-10 text-md outline-none focus:bg-white text-black mr-2 focus:outline-none:focus"
-              type="search" autocomplete="off" spellcheck="false" aria-live="polite" required placeholder="Search">
-            <button type="reset" class="close-icon"></button>
-          </form>
-        </div>
 
         <!-- Mobile -->
-        <div class="sm:hidden flex justify-center items-center">
-          <button class="py-3 ml-3" @click="navOpen=!navOpen">
+        <div class="sm:hidden flex justify-center mx-10 lg:mx-0 items-center">
+          <button class="py-3 mx-3" @click="navOpen=!navOpen">
             <!-- Menu Icons -->
             <div class="grid grid-cols-1 gap-5">
               <ion-icon name="menu" class="text-3xl ml-5 h-18 w-18 cursor-pointer lg:hidden text-white"></ion-icon>
             </div>
           </button>
-          <div class="search-icon-light px-3 focus:bg-white py-4 relative z-10">
-            <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
-                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <button @click="searchBar = true; $nextTick(() => $refs.search.focus());">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-          </div>
+          </button>
+        </div>
+
+        <!-- SearchBar -->
+        <div x-cloak x-show="searchBar" x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-5"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-300"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-5"
+          class="bg-white absolute text-black top-0 right-0 w-full flex justify-center items-center space-x-2 px-2 h-12 sm:w-80 sm:top-14 sm:border-2 sm:border-indigo-400 sm:rounded sm:shadow-md">
+          <input type="text" placeholder=" Search" x-ref="search"
+            class="w-full appearance-none border-none bg-transparent py-2 px-3 texy-gray-700 leading-tight focus:outline-none">
+          <button @click="searchBar = false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         <!-- Mobile Drawer -->
@@ -250,22 +251,35 @@
             class="hero-btn-primary md-hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 z-1000 font-medium text-sm px-8 py-3 text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-bold">Where
             to Buy</button>
 
-          <!-- search functionality -->
-          <div class="flex justify-center items-center search-container pl-2 relative sm:mr-5">
-            <div class="search-icon-light px-3 focus:bg-white py-4 relative z-10">
-              <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
-                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="search-icon-dark hidden px-3 focus:bg-white py-4 relative z-10">
+          <!-- search effect -->
+          <!-- Search Bar Mobile -->
+          <div class="flex justify-center items-center search-container pl-[-10px] relative sm:mr-5">
+
+            <div class="search-icon-dark hidden px-3 focus:bg-white text-black py-0 relative z-10">
               <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
                   stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
+            <form>
+              <input
+                class="search-input h-10 text-md outline-none focus:bg-white text-black mr-2 focus:outline-none:focus"
+                type="search" autocomplete="off" spellcheck="false" aria-live="polite" required placeholder="Search">
+              <button type="reset" class="close-icon"></button>
+            </form>
+          </div>
+
+          <!-- search functionality -->
+          <div class="flex justify-center items-center search-container pl-[-10px] relative sm:mr-5">
+            <div class="search-icon-light px-0 focus:bg-white py-4 relative z-10">
+              <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+
             <form>
               <input class="search-input h-10 text-md outline-none focus:bg-white mr-2 focus:outline-none:focus"
                 type="search" autocomplete="off" spellcheck="false" aria-live="polite" required placeholder="Search">
