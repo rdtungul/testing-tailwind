@@ -47,14 +47,13 @@
 <body class="font-[Plus Jakarta Sans] bg-cover no-repeat">
 
   <section id="hero" class="w-full">
-
     <nav x-data="nav" class="w-full top-0 text-white">
 
       <!-- utility nav -->
       <div id="utility-nav" class="hero-navigations bg-primary">
         <div class="container sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:w-full">
 
-          <ul class="flex align-items-right space-x-5 md:mr-[100px] lg:mr-[120px] justify-between py-4 mx-auto">
+          <ul class="flex align-items-right space-x-5 md:mr-[100px] lg:mr-[50px] justify-between py-4 mx-auto">
             <li>
               <a class="un-text1 text-white" aria-current="page" href="/#">
               </a>
@@ -87,10 +86,9 @@
         </div>
       </div>
 
-
       <!-- DESKTOP VIEW -->
       <div
-        class="hero-nav-primary container mx-auto flex flex-wrap items-center justify-between overflow-hidden pt-5 pb-[15vh]">
+        class="hero-nav-primary container text-white mx-auto flex flex-wrap items-center justify-between overflow-hidden mx-auto md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl pb-[15vh]">
         <!-- Logo -->
         <a href="./index.html" class="flex items-center">
           <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
@@ -202,7 +200,7 @@
 
         </div>
         <!-- Desktop -->
-        <div class="hidden sm:flex justify-evenly items-center space-x-4">
+        <div class="hidden sm:flex justify-evenly items-center space-x-4 mr-0">
           <a href="#">
             <h1 class="px-1 font-medium hover:text-secondary transition duration-200"
               :class="active == 'home'?'border-b-2 border-secondary text-secondary':''">Railing</h1>
@@ -296,7 +294,8 @@
 
 
   <!-- HERO SECTION -->
-  <section id="hero" class="container md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xl:mt-[-10%]">
+  <section id="hero"
+    class="container md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl lg:mt-[-10%] xl:mt-[-7%]">
     <div class="flex flex-wrap items-center px-5 justify-between mx-auto bg-none my-20 md:px-0 lg:px-0">
 
       <div class="hero-phrases mx-auto">
