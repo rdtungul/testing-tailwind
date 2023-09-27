@@ -90,7 +90,7 @@
       <div
         class="hero-nav-primary container text-white mx-auto flex flex-wrap items-center justify-between overflow-hidden mx-auto md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl pb-[15vh]">
         <!-- Logo -->
-        <a href="./index.html" class="flex items-center">
+        <a href="index.html" class="flex items-center">
           <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
         </a>
 
@@ -161,15 +161,15 @@
               </div>
               <!-- Dropdown Items -->
               <div x-show="open" class="flex flex-col justify-center items-center ml-4">
-                <a href="#">
+                <a href="./link1.html">
                   <h1 class="p-3 hover:text-secondary transition duration-200">Link 1
                   </h1>
                 </a>
-                <a href="#">
+                <a href="./link2.html">
                   <h1 class="p-3 hover:text-secondary transition duration-200">Link 2
                   </h1>
                 </a>
-                <a href="#">
+                <a href="link2.html">
                   <h1 class="p-3 hover:text-secondary transition duration-200">Link 3
                   </h1>
                 </a>
@@ -202,8 +202,7 @@
         <!-- Desktop -->
         <div class="hidden sm:flex justify-evenly items-center space-x-4 mr-0">
           <a href="#">
-            <h1 class="px-1 font-medium hover:text-secondary transition duration-200"
-              :class="active == 'home'?'border-b-2 border-secondary text-secondary':''">Railing</h1>
+            <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Railing</h1>
           </a>
           <!-- Dropdown -->
           <div x-data="dropdown" class="relative flex justify-center items-center group">
@@ -220,10 +219,10 @@
                 clip-rule="evenodd" />
             </svg>
             <div x-cloak x-show="open" class="absolute top-14 bg-primary">
-              <a href="#" @click="open = false">
+              <a href="./link1.html" @click="open = false">
                 <h1 class="p-3 font-medium hover:text-secondary transition duration-200">Link 1</h1>
               </a>
-              <a href="#" @click="open = false">
+              <a href="./link2.html" @click="open = false">
                 <h1 class="p-3 font-medium hover:text-secondary transition duration-200">Link 2</h1>
               </a>
               <a href="#" @click="open = false">
@@ -516,7 +515,7 @@
     <div class="container swiper mySwiper py-10">
       <div class="swiper-wrapper">
         <!-- slider 1 -->
-        <div class="swiper-slide w-[50%] mx-10">
+        <div class="swiper-slide mx-10">
           <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
             <div class="mt-4">
               <span class="swiper-no-swiping">
@@ -537,7 +536,7 @@
         </div>
 
         <!-- slider 2 -->
-        <div class="swiper-slide w-[50%] mx-10">
+        <div class="swiper-slide mx-10">
           <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
             <div class="mt-4">
               <span class="swiper-no-swiping">
@@ -558,7 +557,7 @@
         </div>
 
         <!-- slider 3 -->
-        <div class="swiper-slide w-[50%] mx-10">
+        <div class="swiper-slide mx-10">
           <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
             <div class="mt-4">
               <span class="swiper-no-swiping">
@@ -1089,18 +1088,30 @@
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 10,
+      centeredSlides: true,
       breakpoints: {
+        340: {
+          slidesPerView: 1,
+          spaceBetween: 1,
+          centeredSlides: true,
+
+        },
         640: {
           slidesPerView: 1,
           spaceBetween: 10,
+          centeredSlides: true,
+
         },
         1024: {
           slidesPerView: 2.5,
           spaceBetween: 50,
+          centeredSlides: true,
+
         },
       },
       loop: true,
     });
+
 
     // dropdown navbar
     // Initialization for ES Users
@@ -1113,7 +1124,6 @@
 
   </script>
 
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
   <script type="module" src="/src/main.jsx"></script>
 </body>
