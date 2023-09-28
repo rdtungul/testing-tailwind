@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "SangBleu Sunrise";
+  src: url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot");
+  src: url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.svg#SangBleu Sunrise")format("svg");
+}
+
 :root {
   /* fonts */
-  --primary1-fs: 'Spectral', serif;
+  --primary1-fs: 'SangBleu Sunrise', serif;
   --primary2-fs: 'Plus Jakarta Sans', sans-serif;
   --color-primary: '#1C3051';
   --color-secondary: '#CDC4B1';

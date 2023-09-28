@@ -13,9 +13,15 @@ export default {
         cta: '#5A2A24',
         testimonial: '#e5e5e5',
       },
+      leading:{
+        11: '80px'
+      },
+      fontSize: {
+       'text-7xxl': '74px'
+      }
     },
     fontFamily: {
-      primary: ['Spectral, serif'],
+      primary: ['SangBleu Sunrise, serif'],
       secondary: ['Plus Jakarta Sans, sans - serif'],
     },
   },
