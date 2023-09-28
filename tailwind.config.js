@@ -13,7 +13,8 @@ export default {
         cta: '#5A2A24',
         testimonial: '#e5e5e5',
         benefits: '#F4EEE0',
-        benefits2: '#E0DACE'
+        benefits2: '#E0DACE',
+        black: '#000000'
       },
       leading:{
         11: '80px',
@@ -31,7 +32,7 @@ export default {
     },
     fontFamily: {
       primary: ['SangBleu Sunrise, serif'],
-      secondary: ['Plus Jakarta Sans, sans - serif'],
+      secondary: ['Plus Jakarta Sans, serif'],
     },
   },
   plugins: [],
