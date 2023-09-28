@@ -14,7 +14,8 @@ export default {
         testimonial: '#e5e5e5',
       },
       leading:{
-        11: '80px'
+        11: '80px',
+        8: '31px'
       },
       fontSize: {
        'text-7xxl': '74px'
