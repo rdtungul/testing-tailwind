@@ -12,6 +12,8 @@ export default {
         paragraph: '#2A2B2A',
         cta: '#5A2A24',
         testimonial: '#e5e5e5',
+        benefits: '#F4EEE0',
+        benefits2: '#E0DACE'
       },
       leading:{
         11: '80px',
@@ -22,7 +24,9 @@ export default {
       },
       padding:{
         'p-section': '150px',
-        'p-subtext': '50px'
+      },
+      margin: {
+        'm-subtext': '60px'
       }
     },
     fontFamily: {
