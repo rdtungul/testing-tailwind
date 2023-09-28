@@ -19,6 +19,10 @@ export default {
       },
       fontSize: {
        'text-7xxl': '74px'
+      },
+      padding:{
+        'p-section': '150px',
+        'p-subtext': '50px'
       }
     },
     fontFamily: {
