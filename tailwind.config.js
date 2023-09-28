@@ -14,6 +14,10 @@ export default {
         testimonial: '#e5e5e5',
       },
     },
+    fontFamily: {
+      primary: ['Spectral, serif'],
+      secondary: ['Plus Jakarta Sans, sans - serif'],
+    },
   },
   plugins: [],
 }
