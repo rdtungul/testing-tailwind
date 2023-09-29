@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "SangBleu Sunrise";
-  src: url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot");
-  src: url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.svg#SangBleu Sunrise")format("svg");
+  font-family: 'SangBleu Sunrise';
+  src: url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot');
+  src: url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff2')
+      format('woff2'),
+    url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.woff')
+      format('woff'),
+    url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.ttf')
+      format('truetype'),
+    url('https://db.onlinewebfonts.com/t/5ebc09361aef4dbfa14ad8492b8cca11.svg#SangBleu Sunrise')
+      format('svg');
 }
 
 :root {
@@ -133,7 +138,11 @@ input[type='search']::-webkit-search-cancel-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
+/* .swiper-slide.swiper-slide-active {
+  margin-left: -370px;
+} */
 
 .hero-btn-primary {
   margin-left: 40px !important;

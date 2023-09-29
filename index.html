@@ -293,7 +293,7 @@
 
 
   <!-- HERO SECTION -->
-  <section id="hero" class="container lg:max-w-[1180px] lg:mt-[2%] md:mt-[-25%] xl:mt-[-15%]">
+  <section id="hero" class="container lg:max-w-[1180px] lg:mt-[-10%] md:mt-[-5%] xl:mt-[-5%]">
     <div class="flex flex-wrap items-center px-5 justify-between mx-auto bg-none my-20 md:px-0 lg:px-0">
 
       <div class="hero-phrases mx-auto">
@@ -435,7 +435,7 @@
   <!-- BENEFITS SECTION -->
   <section id="benefits" class="bg-benefits2 py-p-section">
     <!-- Component Code -->
-    <div class=" container mx-auto md:max-w-screen-md lg:max-w-[1180px]">
+    <div class="container mx-auto md:max-w-screen-md lg:max-w-[1180px]">
       <h2 class="hero-title text-black text-5xl md:text-center lg:text-left mb-m-subtext">
         Benefits
       </h2>
@@ -507,14 +507,18 @@
       <div class="lg:w-[610px] xl:w-[40%] xl:bg-auto xl:m-0 m-0">
         <img src="./src/assets/images/cta1.jpg" alt="cta1" class="xl:w-full max-h-[455px]">
       </div>
-      <div class="text-white m-0 mx-[40px]">
-        <h3 class="text-[34px]">Find a Dealer Near You</h3>
-        <p class="mt-[40px] leading-11">
+      <div class="text-white lg:ml-[90px] mx-[20px]">
+        <h3 class="text-[30px] lg:text-[34px]">Find a Dealer Near You</h3>
+        <p class="lg:mt-[20px] hidden md:hidden lg:flex xl:flex md:mt-0 leading-11">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Suspendisse varius enim in eros elementum
           tristique.
         </p>
+        <p class="lg:mt-[20px] flex md:flex lg:hidden xl:hidden md:mt-0 leading-11">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+          tristique.
+        </p>
         <button type="button"
-          class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium mt-[50px] outline-secondary outline">
+          class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0 bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium sm:mt-5 lg:mt-[50px] md:mt-5 outline-secondary outline">
           Find a Dealer
         </button>
       </div>
@@ -525,79 +529,64 @@
 
   <!-- TESTIMONIALS -->
   <!-- Swiper JS -->
-  <section id="testimonials" class="bg-white">
-    <div class="container lg:max-w-[1180px] swiper mySwiper">
-      <div class="pt-p-section ">
-        <h2 class="testimonial-title text-black text-5xl md:text-center lg:text-left">
-          Testimonial Section
-        </h2>
-      </div>
-      <div class="swiper-wrapper max-h-[50vh]">
-        <!-- slider 1 -->
-        <div class="swiper-slide mx-10">
-          <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
-            <div class="mt-4">
-              <span class="swiper-no-swiping">
-                <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nihil
-                  officia quam sed ipsa
-                  numquam. Illum, fugit voluptate et aliquid, commodi officia laboriosam officiis
-                  quisquam dolor hic,
-                  omnis provident! Incidunt.
-                </p>
-                <h4 class="text-2xl font-bold text-cta mt-10 sm:text-xl">
-                  John Smith
-                </h4>
-                Architect
-              </span>
-            </div>
+  <section id="testimonials" class="bg-white py-p-section">
+    <div class="swiper mySwiper px-5 md:px-0 lg-h-full lg:px-0 mx-auto md:max-w-screen-md lg:max-w-[1180px]">
+      <h2 class="text-5xl md:text-center lg:text-left">Testimonial Section</h2>
+      <div class="swiper-wrapper h-auto mt-10">
+        <!-- slide 1 -->
+        <div class="swiper-slide">
+          <div class="flex items-center p-10 bg-testimonial h-[451px] w-[451px]">
+            <span class="swiper-no-swiping">
+              <p class="text-gray-700 text-[21px]">
+                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+                enim velit
+                mollit. Exercitation veniam consequat.”
+              </p>
+              <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                John Smith
+              </h4>
+              <span class="text-[16px]">Architect</span>
+            </span>
           </div>
         </div>
-
-        <!-- slider 2 -->
-        <div class="swiper-slide mx-10">
-          <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
-            <div class="mt-4">
-              <span class="swiper-no-swiping">
-                <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nihil
-                  officia quam sed ipsa
-                  numquam. Illum, fugit voluptate et aliquid, commodi officia laboriosam officiis
-                  quisquam dolor hic,
-                  omnis provident! Incidunt.
-                </p>
-                <h4 class="text-2xl font-bold text-cta mt-10 sm:text-xl">
-                  John Smith
-                </h4>
-                Architect
-              </span>
-            </div>
+        <!-- slide 2 -->
+        <div class="swiper-slide">
+          <div class="flex items-center p-10 bg-testimonial h-[451px] w-[451px]">
+            <span class="swiper-no-swiping">
+              <p class="text-gray-700 text-[21px]">
+                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+                enim velit
+                mollit. Exercitation veniam consequat.”
+              </p>
+              <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                John Smith
+              </h4>
+              <span class="text-[16px]">Architect</span>
+            </span>
           </div>
         </div>
-
-        <!-- slider 3 -->
-        <div class="swiper-slide mx-10">
-          <div class="flex flex-col justify-items-center p-10 bg-testimonial py-[25%]">
-            <div class="mt-4">
-              <span class="swiper-no-swiping">
-                <p class="mt-4 text-gray-700">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nihil
-                  officia quam sed ipsa
-                  numquam. Illum, fugit voluptate et aliquid, commodi officia laboriosam officiis
-                  quisquam dolor hic,
-                  omnis provident! Incidunt.
-                </p>
-                <h4 class="text-2xl font-bold text-cta mt-10 sm:text-xl">
-                  John Smith
-                </h4>
-                Architect
-              </span>
-            </div>
+        <!-- slide 3 -->
+        <div class="swiper-slide">
+          <div class="flex items-center p-10 bg-testimonial h-[451px] w-[451px]">
+            <span class="swiper-no-swiping">
+              <p class="text-gray-700 text-[21px]">
+                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
+                enim velit
+                mollit. Exercitation veniam consequat.”
+              </p>
+              <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                John Smith
+              </h4>
+              <span class="text-[16px]">Architect</span>
+            </span>
           </div>
         </div>
-      </div>
+      </div> <!--swiper wrapper end-->
+      <span class="swiper-buttons">
+        <div class="swiper-button-next lg:pt-11 md:pt-0 text-secondary"></div>
+        <div class="swiper-button-prev lg:pt-11 md:pt-0 text-secondary"></div>
+      </span>
     </div>
-
   </section> <!-- container -->
 
 
@@ -1005,14 +994,18 @@
       <div class="lg:w-[610px] xl:w-[40%] xl:bg-auto xl:m-0 m-0">
         <img src="./src/assets/images/cta1.jpg" alt="cta2" class="xl:w-full max-h-[455px]">
       </div>
-      <div class="text-white m-0 mx-[40px]">
+      <div class="text-white lg:ml-[90px] mx-[20px]">
         <h3 class="text-[34px]">Fence Builder</h3>
-        <p class="mt-[40px] leading-11">
+        <p class="lg:mt-[20px] hidden md:hidden lg:flex xl:flex md:mt-0 leading-11">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Suspendisse varius enim in eros elementum
           tristique.
         </p>
+        <p class="lg:mt-[20px] flex md:flex lg:hidden xl:hidden md:mt-0 leading-11">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+          tristique.
+        </p>
         <button type="button"
-          class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium mt-[50px] outline-secondary outline">
+          class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0 bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium mt-5 lg:mt-[50px] md:mt-5 outline-secondary outline">
           Find a Dealer
         </button>
       </div>
@@ -1104,30 +1097,28 @@
 
     // swiper js
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
       breakpoints: {
         340: {
           slidesPerView: 1,
-          spaceBetween: 1,
-          centeredSlides: true,
-
+          spaceBetween: 10,
         },
         640: {
           slidesPerView: 1,
           spaceBetween: 10,
-          centeredSlides: true,
-
         },
         1024: {
           slidesPerView: 2.5,
-          spaceBetween: 50,
-          centeredSlides: true,
-
+          spaceBetween: 25,
         },
       },
-      loop: true,
     });
 
 

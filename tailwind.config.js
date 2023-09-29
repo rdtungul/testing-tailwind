@@ -14,22 +14,22 @@ export default {
         testimonial: '#e5e5e5',
         benefits: '#F4EEE0',
         benefits2: '#E0DACE',
-        black: '#000000'
+        black: '#000000',
       },
-      leading:{
+      leading: {
         11: '51px',
         12: '80px',
-        8: '31px'
+        8: '31px',
       },
       fontSize: {
-       'text-7xxl': '74px'
+        'text-7xxl': '74px',
       },
-      padding:{
+      padding: {
         'p-section': '150px',
       },
       margin: {
-        'm-subtext': '60px'
-      }
+        'm-subtext': '60px',
+      },
     },
     fontFamily: {
       primary: ['SangBleu Sunrise, serif'],
