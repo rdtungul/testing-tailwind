@@ -17,7 +17,8 @@ export default {
         black: '#000000'
       },
       leading:{
-        11: '80px',
+        11: '51px',
+        12: '80px',
         8: '31px'
       },
       fontSize: {
