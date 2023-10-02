@@ -597,8 +597,9 @@
       <h2 class="hero-title text-black text-5xl text-left md:text-center  pt-p-section mb-m-subtext">
         Inspiration/UGC
       </h2>
-      <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
 
+      <!-- START: modalOpen 1-3 -->
+      <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
         <div class="md:columns-2 lg:columns-3">
           <!-- COLUMNS 1-3 -->
           <!-- column 1-->
@@ -612,6 +613,7 @@
 
             <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
 
+              <!-- IG icons and tags -->
               <div class="mt-auto">
                 <span class="text-[14px]">#tag</span>
               </div>
@@ -665,13 +667,14 @@
             <img class="w-full rounded-md" src="https://source.unsplash.com/random/2">
             <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
 
+              <!-- IG icons and tags -->
               <div class="mt-auto">
                 <span class="text-[14px]">#tag</span>
               </div>
-            </div>
-            <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
-              <div class="mt-auto">
-                <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
               </div>
             </div>
           </div>
@@ -682,6 +685,7 @@
             <img class="w-full rounded-md" src="https://source.unsplash.com/random/3">
             <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
 
+              <!-- IG icons and tags -->
               <div class="mt-auto">
                 <span class="text-[14px]">#tag</span>
               </div>
@@ -693,13 +697,214 @@
             </div>
           </div>
           <!-- END: COLUMNS 1-3 -->
-
-
-
-
-
         </div>
-      </div>
+      </div> <!-- END: modalOpen 1-3 -->
+
+      <!-- START: modalOpen 4-6 -->
+      <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
+        <div class="md:columns-2 lg:columns-3">
+          <!-- COLUMNS 4-6 -->
+          <!-- columns 4 -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+            <img class="w-full rounded-md" src="https://source.unsplash.com/random/4">
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- column 5-->
+          <!-- Video thumbnail -->
+          <button
+            class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
+            @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video">
+
+            <img class="w-full rounded-md shadow-2xl transition-shadow duration-300 ease-in-out"
+              src="https://source.unsplash.com/random/5" width="auto" height="auto" alt="Modal video thumbnail" />
+
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Play icon -->
+            <img src="./src/assets/images/play-circle.svg"
+              class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
+              alt="Play Button" />
+          </button>
+          <!-- End: Video thumbnail -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+
+            <!-- Modal backdrop -->
+            <div class="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity" x-show="modalOpen"
+              x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-100"
+              x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak>
+            </div>
+            <!-- End: Modal backdrop -->
+
+            <!-- Modal dialog -->
+            <div id="modal" class="fixed inset-0 z-[99999] flex p-6" role="dialog" aria-modal="true" x-show="modalOpen"
+              x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-75"
+              x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-out duration-200"
+              x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75" x-cloak>
+              <div class="max-w-5xl mx-auto h-full flex items-center">
+                <div class="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden"
+                  @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                  <video x-init="$watch('modalOpen', value => value ? $el.play() : $el.pause())" width="1920"
+                    height="1080" loop controls>
+                    <source src="https://dsqqu7oxq6o1v.cloudfront.net/motion-array-1224343-cPTVMSOKEm-high.mp4"
+                      type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End: Modal dialog -->
+
+          <!-- columns 6 -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+            <img class="w-full rounded-md" src="https://source.unsplash.com/random/6">
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END: COLUMNS 1-3 -->
+        </div>
+      </div> <!-- END: modalOpen 4-6 -->
+
+
+      <!-- START: modalOpen 4-6 -->
+      <div class="[&_[x-cloak]]:hidden" x-data="{ modalOpen: false }">
+        <div class="md:columns-2 lg:columns-3">
+          <!-- COLUMNS 7-9 -->
+          <!-- columns 7 -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+            <img class="w-full rounded-md" src="https://source.unsplash.com/random/7">
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- columns 8 -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+            <img class="w-full rounded-md" src="https://source.unsplash.com/random/8">
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- column 9-->
+          <!-- Video thumbnail -->
+          <button
+            class="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
+            @click="modalOpen = true" aria-controls="modal" aria-label="Watch the video">
+
+            <img class="w-full rounded-md shadow-2xl transition-shadow duration-300 ease-in-out"
+              src="https://source.unsplash.com/random/9" width="auto" height="auto" alt="Modal video thumbnail" />
+
+            <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+              <!-- IG icons and tags -->
+              <div class="mt-auto">
+                <span class="text-[14px]">#tag</span>
+              </div>
+              <div class="content-end flex-wrap absolute inset-x-0 px-8 text-white flex flex-col">
+                <div class="mt-auto">
+                  <img src="./src/assets/images/instagram.svg" alt="Instagram Icon" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Play icon -->
+            <img src="./src/assets/images/play-circle.svg"
+              class="absolute pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out"
+              alt="Play Button" />
+          </button>
+          <!-- End: Video thumbnail -->
+          <div
+            class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+
+            <!-- Modal backdrop -->
+            <div class="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity" x-show="modalOpen"
+              x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-100"
+              x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true" x-cloak>
+            </div>
+            <!-- End: Modal backdrop -->
+
+            <!-- Modal dialog -->
+            <div id="modal" class="fixed inset-0 z-[99999] flex p-6" role="dialog" aria-modal="true" x-show="modalOpen"
+              x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-75"
+              x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-out duration-200"
+              x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75" x-cloak>
+              <div class="max-w-5xl mx-auto h-full flex items-center">
+                <div class="w-full max-h-full rounded-3xl shadow-2xl aspect-video bg-black overflow-hidden"
+                  @click.outside="modalOpen = false" @keydown.escape.window="modalOpen = false">
+                  <video x-init="$watch('modalOpen', value => value ? $el.play() : $el.pause())" width="1920"
+                    height="1080" loop controls>
+                    <source
+                      src="https://dsqqu7oxq6o1v.cloudfront.net/motion-array-1628451-DA_2022_09_19_MEN_WALKING_IN_THE_RAIN_ICELAND_0037-high.mp4"
+                      type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End: Modal dialog -->
+          <!-- END: COLUMNS 7-9 -->
+        </div>
+      </div> <!-- END: modalOpen 7-9 -->
+
+
     </div>
 
 
