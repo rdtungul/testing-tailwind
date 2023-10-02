@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX (Testing)</title>
+
+    <!-- Tailwind Css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Alpine Js -->
+    <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&family=Spectral:wght@300&display=swap"
+        rel="stylesheet">
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./src/index.css">
+
+
+    <!-- swiper cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+    <!-- menu icon -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+
+<style>
+    [x-cloak] {
+        display: none;
+    }
+</style>
+
+<body class="font-[Plus Jakarta Sans] m-auto bg-cover no-repeat font-secondary">
+
+    <section id="hero" class="w-full">
+        <nav x-data="nav" class="w-full top-0 text-white leading-[22px]">
+
+            <!-- utility nav -->
+            <div id="utility-nav" class="hero-navigations bg-primary">
+                <div class="container text-xs sm:max-w-screen-md md:max-w-screen-lg lg:max-w-[1180px]">
+
+                    <ul
+                        class="flex align-items-right space-x-5 md:mr-[100px] lg:mr-[50px] justify-between py-[8px] mx-auto">
+                        <li>
+                            <a class="un-text1 text-white" aria-current="page" href="/#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-secondary" aria-current="page" href="/#cta1">
+                                Dealer Portal
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-secondary" aria-current="page" href="/#benefits">
+                                Training
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white hover:text-secondary" aria-current="page" href="/#">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white font-bold hover:text-secondary" aria-current="page" href="/#">
+                                1-888-704-7130
+                            </a>
+                        </li>
+                        <li>
+                            <a class="un-text2 text-white sm:hidden lg:mr-5 xl:mr-5" aria-current="page" href="/#">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DESKTOP VIEW -->
+            <div
+                class="hero-nav-primary container text-white mx-auto flex flex-wrap items-center justify-between overflow-hidden lg:max-w-[1180px] lg:mt-8 pb-[15vh]">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img class="logo" src="./src/assets/images/logo.svg" alt="Logo" />
+                </a>
+
+                <!-- Mobile -->
+                <div class="sm:hidden flex justify-center mx-10 lg:mx-0 items-center">
+                    <button class="py-3 mx-3" @click="navOpen=!navOpen">
+                        <!-- Menu Icons -->
+                        <div class="grid grid-cols-1 gap-5">
+                            <ion-icon name="menu"
+                                class="text-3xl ml-5 h-18 w-18 cursor-pointer lg:hidden text-white"></ion-icon>
+                        </div>
+                    </button>
+                    <button @click="searchBar = true; $nextTick(() => $refs.search.focus());">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- SearchBar -->
+                <div x-cloak x-show="searchBar" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 transform -translate-y-5"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-5"
+                    class="bg-white absolute text-black top-0 right-0 w-full flex justify-center items-center space-x-2 px-2 h-12 sm:w-80 sm:top-14 sm:border-2 sm:border-indigo-400 sm:rounded sm:shadow-md">
+                    <input type="text" placeholder=" Search" x-ref="search"
+                        class="w-full appearance-none border-none bg-transparent py-2 px-3 texy-gray-700 leading-tight focus:outline-none">
+                    <button @click="searchBar = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Drawer -->
+                <div x-cloak x-show="navOpen" @click.outside="navOpen = false"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform -translate-x-5"
+                    x-transition:enter-end="opacity-100 transform translate-x-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform translate-x-0"
+                    x-transition:leave-end="opacity-0 transform -translate-x-5"
+                    class="sm:hidden fixed h-screen top-0 left-0 bottom-0 w-72 bg-white shadow-md">
+                    <div class="h-full flex justify-center text-black items-center space-y-5 flex-col">
+                        <a href="#">
+                            <h1 class="px-3 hover:text-secondary transition duration-200">Railing</h1>
+                        </a>
+                        <!-- Dropdown -->
+                        <div x-data="dropdown" class="w-full relative">
+                            <div @click="open = !open; active='service'" class="group flex justify-center items-center">
+                                <button class="apperance-none focus:outline-none">
+                                    <h1 class="px-3 group-hover:text-secondary transition duration-200"
+                                        :class="active == 'service'?'text-secondary':''">
+                                        Fencing
+                                    </h1>
+                                </button>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 mt-[-10px] ml-[-10px] group-hover:text-secondary transition-all duration-200 transform mx-0"
+                                    :class="open ? 'rotate-180':''" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <!-- Dropdown Items -->
+                            <div x-show="open" class="flex flex-col justify-center items-center ml-4">
+                                <a href="./link1.html">
+                                    <h1 class="p-3 hover:text-secondary transition duration-200">Link 1
+                                    </h1>
+                                </a>
+                                <a href="./link2.html">
+                                    <h1 class="p-3 hover:text-secondary transition duration-200">Link 2
+                                    </h1>
+                                </a>
+                                <a href="link2.html">
+                                    <h1 class="p-3 hover:text-secondary transition duration-200">Link 3
+                                    </h1>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <h1 class="px-3 hover:text-secondary transition duration-200">Lighting
+                            </h1>
+                        </a>
+                        <a href="#">
+                            <h1 class="px-3 hover:text-secondary transition duration-200">Inspiration
+                            </h1>
+                        </a>
+                        <a href="#">
+                            <h1 class="px-3 hover:text-secondary transition duration-200">Why Key-Link
+                            </h1>
+                        </a>
+                        <a href="#">
+                            <h1 class="px-3 hover:text-secondary transition duration-200">Resources
+                            </h1>
+                        </a>
+                        <a href="#"
+                            class="hero-btn-secondary hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm px-[33.2px] py-[16.6px] font-medium text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white">Where
+                            to Buy</a>
+                    </div>
+
+
+
+                </div>
+                <!-- Desktop -->
+                <div class="hidden sm:flex justify-evenly items-center space-x-4 mr-0">
+                    <a href="#">
+                        <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Railing</h1>
+                    </a>
+                    <!-- Dropdown -->
+                    <div x-data="dropdown" class="relative flex justify-center items-center group">
+                        <button @click="open = !open;active = 'service';" @click.outside="open=false">
+                            <h1 class="p-3 font-medium hover:text-secondary transition duration-200"
+                                :class="active == 'service'?'text-secondary':''">Fencing</h1>
+
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 ml-[-10px] group-hover:text-pa transition-all duration-200 transform"
+                            :class="open ? 'rotate-180':''" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div x-cloak x-show="open" class="absolute top-14 bg-primary">
+                            <a href="./link1.html" @click="open = false">
+                                <h1 class="p-3 font-medium hover:text-secondary transition duration-200">Link 1</h1>
+                            </a>
+                            <a href="./link2.html" @click="open = false">
+                                <h1 class="p-3 font-medium hover:text-secondary transition duration-200">Link 2</h1>
+                            </a>
+                            <a href="#" @click="open = false">
+                                <h1 class="p-3 font-medium hover:text-secondary transition duration-200">Link 3</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Lighting</h1>
+                    </a>
+                    <a href="#">
+                        <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Inspiration</h1>
+                    </a>
+                    <a href="#">
+                        <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Why Key-Link</h1>
+                    </a>
+                    <a href="#">
+                        <h1 class="px-1 font-medium hover:text-secondary transition duration-200">Resources</h1>
+                    </a>
+
+                    <!-- buy button primary -->
+                    <button href="#"
+                        class="hero-btn-primary md-hidden text-black focus:ring-4 focus:outline-none focus:ring-blue-300 z-1000 text-sm px-[33.2px] py-[16.6px] text-center mr-3 md:mr-0 bg-secondary hover:bg-gray-600 hover:text-white font-medium">Where
+                        to Buy</button>
+
+                    <!-- search effect -->
+                    <!-- Search Bar Mobile -->
+                    <div class="flex justify-center items-center search-container pl-[-10px] relative sm:mr-5">
+
+                        <div class="search-icon-dark hidden px-3 focus:bg-white text-black py-0 relative z-10">
+                            <svg width="25" height="25" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
+                                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <form>
+                            <input
+                                class="search-input h-10 text-md outline-none focus:bg-white text-black mr-1 focus:outline-none:focus"
+                                type="search" autocomplete="off" spellcheck="false" aria-live="polite" required
+                                placeholder="Search">
+                            <button type="reset" class="close-icon"></button>
+                        </form>
+                    </div>
+
+                    <!-- search functionality -->
+                    <div class="flex justify-center items-center search-container pl-[-10px] relative sm:mr-5">
+                        <div class="search-icon-light px-0 focus:bg-white py-4 relative z-10">
+                            <svg width="25" height="25" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 19L13 13M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <form>
+                            <input
+                                class="search-input h-10 text-md outline-none focus:bg-white mr-2 focus:outline-none:focus"
+                                type="search" autocomplete="off" spellcheck="false" aria-live="polite" required
+                                placeholder="Search">
+                            <button type="reset" class="close-icon"></button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+
+    </section>
+
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="container lg:max-w-[1180px] lg:mt-[-10%] md:mt-[-5%] xl:mt-[-5%]">
+        <div class="flex flex-wrap items-center px-5 justify-between mx-auto bg-none my-20 md:px-0 lg:px-0">
+
+            <div class="hero-phrases mx-auto">
+                <h1 class="hero-title text-gray-100 text-text-7xxl leading-12">
+                    Elegant Custom <br />Railings to Transform <br /> Your Space
+                </h1>
+                <p class="hero-text font-normal text-white leading-8 text-lg mt-[25px] xl:pr-[50%]">
+                    Bring to any deck, porch, or balcony with aluminum railing and fencing
+                    retain their clean look with minimal maintenance, giving your outdoor
+                    living area a timeless style and a modern vibe.
+                </p>
+            </div>
+
+            <div class="hero-buttons container mx-auto mt-[20px] flex">
+                <button type="button"
+                    class=" focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm text-center mr-3 bg-primary text-white hover:bg-gray-600 hover:text-white md:mr-[33px] px-[33.2px] py-[16.6px] font-medium sm:mt-10">
+                    See Products
+                </button>
+                <button type="button"
+                    class="text-black focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm text-center bg-secondary hover:bg-gray-600 hover:text-white px-[33.2px] py-[16.6px] font-medium sm:mt-10 sm:ml-0">
+                    Visualize Your Railings
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="bg-white py-p-section">
+        <!-- Component Code -->
+        <div class="flex flex-wrap justify-between items-center mx-auto md:max-w-screen-md lg:max-w-[1180px]">
+            <h2 class="container hero-title text-black text-5xl md:text-center lg:text-left mb-m-subtext">
+                Our Products
+            </h2>
+            <!-- product image 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-5 sm:grid-cols-2 gap-3">
+                <a href="#">
+                    <div class="relative md:w-full h-[287px] lg:w-[228px] flex items-end justify-start text-left bg-cover bg-center"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent hover:bg-gradient-to-b hover:from-transparent hover:to-black to-zinc-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="px-5 pb-3 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Aluminum
+                                Railing
+                            </h3>
+                        </main>
+                    </div>
+                </a>
+
+                <!-- product image 2 -->
+                <a href="#">
+                    <div class="relative md:w-full h-[287px] lg:w-[228px] flex items-end justify-start text-left bg-cover bg-center"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0  bg-gradient-to-b from-transparent hover:bg-gradient-to-b hover:from-transparent hover:to-black to-zinc-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-3 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Horizontal Cable
+                                Railing
+                            </h3>
+                        </main>
+                    </div>
+                </a>
+
+                <!-- product image 3 -->
+                <a href="#">
+                    <div class="relative md:w-full h-[287px] lg:w-[228px] flex items-end justify-start text-left bg-cover bg-center"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0  bg-gradient-to-b from-transparent hover:bg-gradient-to-b hover:from-transparent hover:to-black to-zinc-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-3 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Vertical Cable
+                                Railing
+                            </h3>
+                        </main>
+                    </div>
+                </a>
+
+                <!-- product image 4 -->
+                <a href="#">
+                    <div class="relative md:w-full h-[287px] lg:w-[228px] flex items-end justify-start text-left bg-cover bg-center"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0  bg-gradient-to-b from-transparent hover:bg-gradient-to-b hover:from-transparent hover:to-black to-zinc-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-3 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Aluminum
+                                Fencing
+                            </h3>
+                        </main>
+                    </div>
+                </a>
+
+                <!-- product image 5 -->
+                <a href="#">
+                    <div class="relative md:w-full h-[287px] lg:w-[228px] flex items-end justify-start text-left bg-cover bg-center"
+                        style="background-image:url(./src/assets/images/product-img1.jpg);">
+                        <div
+                            class="absolute top-0 mt-20 right-0 bottom-0 left-0  bg-gradient-to-b from-transparent hover:bg-gradient-to-b hover:from-transparent hover:to-black to-zinc-900">
+                        </div>
+                        <div class="absolute top-0 right-0 left-0 mx-5 mt-2 flex justify-between items-center">
+                        </div>
+                        <main class="p-5 mb-5 z-10">
+                            <h3 class="text-md tracking-tight text-2xl leading-7 font-regular text-white text-center">
+                                Lighting
+                            </h3>
+                        </main>
+                    </div>
+                </a>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- BENEFITS SECTION -->
+    <section id="benefits" class="bg-benefits2 py-p-section">
+        <!-- Component Code -->
+        <div class="container mx-auto md:max-w-screen-md lg:max-w-[1180px]">
+            <h2 class="hero-title text-black text-5xl md:text-center lg:text-left mb-m-subtext">
+                Benefits
+            </h2>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-[1px] lg:divide-secondary gap-10 lg:gap-3">
+                <div class="bg-none h-auto w-64">
+                    <div class="flex justify-center items-center h-[80px] w-[80px] bg-benefits rounded-full">
+                        <img src="./src/assets/images/benefit1.svg" alt="benefit1"
+                            class="w-[32px] h-[32px] stroke-red-500 stroke-[1.33]">
+                    </div>
+                    <div class="p-3">
+                        <h3 class="block mb-[20px] text-center text-2xl leading-9">Benefit 1</h3>
+                        <p class="text-base font-normal font-secondary text-black text-center leading-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+                            elementum
+                            tristique.</p>
+                    </div>
+                </div>
+
+                <div class="bg-none h-auto w-64">
+                    <div class="flex justify-center items-center h-[80px] w-[80px] bg-benefits rounded-full">
+                        <img src="./src/assets/images/training.svg" alt="benefit1"
+                            class="w-[32px] h-[32px] stroke-red-500 stroke-[1.33]">
+                    </div>
+                    <div class="p-3">
+                        <h3 class="block mb-[20px] text-center text-2xl leading-9">Training</h3>
+                        <p class="text-base font-normal font-secondary text-black text-center leading-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+                            elementum
+                            tristique.</p>
+                    </div>
+                </div>
+
+
+                <div class="bg-none h-auto w-64">
+                    <div class="flex justify-center items-center h-[80px] w-[80px] bg-benefits rounded-full">
+                        <img src="./src/assets/images/pci.svg" alt="benefit1"
+                            class="w-[32px] h-[32px] stroke-red-500 stroke-[1.33]">
+                    </div>
+                    <div class="p-3">
+                        <h3 class="block mb-[20px] text-center text-2xl leading-9">PCI 4000 Certified</h3>
+                        <p class="text-base font-normal font-secondary text-black text-center leading-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+                            elementum
+                            tristique.</p>
+                    </div>
+                </div>
+
+
+                <div class="bg-none h-auto w-64">
+                    <div class="flex justify-center items-center h-[80px] w-[80px] bg-benefits rounded-full">
+                        <img src="./src/assets/images/benefit2.svg" alt="benefit1"
+                            class="w-[32px] h-[32px] stroke-red-500 stroke-[1.33]">
+                    </div>
+                    <div class="p-3">
+                        <h3 class="block mb-[20px] text-center text-2xl leading-9">Benefit 1</h3>
+                        <p class="text-base font-normal font-secondary text-black text-center leading-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
+                            elementum
+                            tristique.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 1ST CTA -->
+    <section id="cta1" class="bg-white">
+        <div
+            class="cta grid md:grid-cols-2 lg:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none items-center max-h-full lg:max-h-[455px] bg-primary">
+            <div class="lg:w-[610px] xl:w-[40%] xl:bg-auto xl:m-0 m-0">
+                <img src="./src/assets/images/cta1.jpg" alt="cta1" class="xl:w-full max-h-[455px]">
+            </div>
+            <div class="text-white lg:ml-[90px] mx-[20px]">
+                <h3 class="text-[30px] lg:text-[34px]">Find a Dealer Near You</h3>
+                <p class="lg:mt-[20px] hidden md:hidden lg:flex xl:flex md:mt-0 leading-11">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Suspendisse varius enim in eros
+                    elementum
+                    tristique.
+                </p>
+                <p class="lg:mt-[20px] flex md:flex lg:hidden xl:hidden md:mt-0 leading-11">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                    tristique.
+                </p>
+                <button type="button"
+                    class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0 bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium sm:mt-5 lg:mt-[50px] md:mt-5 outline-secondary outline">
+                    Find a Dealer
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <!-- Swiper JS -->
+    <section id="testimonials" class="bg-white sm:pt-p-section lg:py-p-section">
+        <div class="swiper mySwiper px-5 md:px-0 lg-h-full lg:px-0 mx-auto md:max-w-screen-md lg:max-w-[1180px]">
+            <h2 class="text-5xl md:text-center lg:text-left">Testimonial Section</h2>
+            <div class="swiper-wrapper lg:mt-10">
+                <!-- slide 1 -->
+                <div class="swiper-slide">
+                    <div class="flex items-center p-10 bg-testimonial h-[600px] lg:h-[451px] w-[451px]">
+                        <span class="swiper-no-swiping">
+                            <p class="text-gray-700 text-[21px]">
+                                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat duis
+                                enim velit
+                                mollit. Exercitation veniam consequat.”
+                            </p>
+                            <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                                John Smith
+                            </h4>
+                            <span class="text-[16px]">Architect</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- slide 2 -->
+                <div class="swiper-slide">
+                    <div class="flex items-center p-10 bg-testimonial h-[451px] w-[451px]">
+                        <span class="swiper-no-swiping">
+                            <p class="text-gray-700 text-[21px]">
+                                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat duis
+                                enim velit
+                                mollit. Exercitation veniam consequat.”
+                            </p>
+                            <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                                John Smith
+                            </h4>
+                            <span class="text-[16px]">Architect</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- slide 3 -->
+                <div class="swiper-slide">
+                    <div class="flex items-center p-10 bg-testimonial h-[451px] w-[451px]">
+                        <span class="swiper-no-swiping">
+                            <p class="text-gray-700 text-[21px]">
+                                “Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                                consequat duis
+                                enim velit
+                                mollit. Exercitation veniam consequat.”
+                            </p>
+                            <h4 class="text-[24px] lg:mt-[125px] leading-9 font-bold text-cta mt-10 sm:text-xl">
+                                John Smith
+                            </h4>
+                            <span class="text-[16px]">Architect</span>
+                        </span>
+                    </div>
+                </div>
+            </div> <!--swiper wrapper end-->
+            <span class="swiper-buttons">
+                <div class="swiper-button-next lg:pt-11 md:pt-0 text-secondary"></div>
+                <div class="swiper-button-prev lg:pt-11 md:pt-0 text-secondary"></div>
+            </span>
+        </div>
+    </section> <!-- container -->
+
+
+    <!-- INSPIRATION SECTION -->
+    <section id="inspiration" class="bg-white">
+        <hr class="max-w-screen-xl mx-auto">
+        <div class="container px-5 lg:max-w-[1180px]">
+            <h2 class="hero-title text-black text-5xl text-left md:text-center  pt-p-section mb-m-subtext">
+                Inspiration/UGC
+            </h2>
+            <div class="md:columns-2 lg:columns-3">
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <video autoplay>
+                        <source src="https://dsqqu7oxq6o1v.cloudfront.net/motion-array-1075852-dV3Kxdk8Sn-high.mp4"
+                            type="video/webm" />
+                    </video>
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/2">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/3">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/4">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <video autoplay>
+                        <source src="https://dsqqu7oxq6o1v.cloudfront.net/motion-array-1224343-cPTVMSOKEm-high.mp4"
+                            type="video/mp4" />
+                    </video>
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/6">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/7">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <img class="w-full rounded-md" src="https://source.unsplash.com/random/8">
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative mb-4 before:content-[''] before:rounded-md before:absolute before:inset-0 before:bg-black before:bg-opacity-20">
+                    <video autoplay>
+                        <source
+                            src="https://dsqqu7oxq6o1v.cloudfront.net/motion-array-1628451-DA_2022_09_19_MEN_WALKING_IN_THE_RAIN_ICELAND_0037-high.mp4"
+                            type="video/mp4" />
+                    </video>
+                    <div class="content-start flex-wrap absolute inset-0 p-8 text-white flex flex-col">
+
+                        <div class="mt-auto">
+                            <span class="text-[14px]">#tag</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        <div class="product-button container mx-auto mt-10 text-center pb-p-section">
+            <button type="button"
+                class="focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm text-center mr-3 md:mr-0 bg-primary text-white hover:bg-gray-600 hover:text-white px-[33.2px] py-[16.6px] font-medium sm:mt-10">
+                See Inspiration Page
+            </button>
+        </div>
+
+
+        </div> <!-- END OF PRODUCTS SECTION -->
+
+    </section>
+
+
+    <!-- 2ND CTA -->
+    <section id="cta2" class="bg-white">
+        <div
+            class="cta grid md:grid-cols-2 lg:grid-cols-2 xl:flex sm:grid-cols-none sm:flex-none items-center max-h-full lg:max-h-[455px] bg-cta">
+            <div class="lg:w-[610px] xl:w-[40%] xl:bg-auto xl:m-0 m-0">
+                <img src="./src/assets/images/cta1.jpg" alt="cta2" class="xl:w-full max-h-[455px]">
+            </div>
+            <div class="text-white lg:ml-[90px] mx-[20px]">
+                <h3 class="text-[34px]">Fence Builder</h3>
+                <p class="lg:mt-[20px] hidden md:hidden lg:flex xl:flex md:mt-0 leading-11">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Suspendisse varius enim in eros
+                    elementum
+                    tristique.
+                </p>
+                <p class="lg:mt-[20px] flex md:flex lg:hidden xl:hidden md:mt-0 leading-11">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                    tristique.
+                </p>
+                <button type="button"
+                    class="text-secondary focus:ring-4 focus:outline-secondaryfocus:ring-blue-300 text-sm text-center mr-3 md:mr-0 bg-none hover:bg-secondary hover:text-white px-[33.2px] py-[16.6px] font-medium mt-5 lg:mt-[50px] md:mt-5 outline-secondary outline">
+                    Find a Dealer
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+        function nav() {
+            return {
+                navOpen: false,
+                active: "home",
+                searchBar: false
+            }
+        }
+        function dropdown() {
+            return {
+                open: false
+            }
+        }
+    </script>
+
+    <!-- toggle menu icons -->
+    <script>
+        const navLinks = document.querySelector('.nav-links')
+        function onToggleMenu(e) {
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[1%]')
+            navLinks.classList.toggle('bg-primary')
+
+
+        }
+
+
+        // SEARCH FUNCTIONS
+        const searchContainer = document.querySelector(`.search-container`)
+        const searchIcon1 = document.querySelector(`.search-icon-light`)
+        const searchIcon2 = document.querySelector(`.search-icon-dark`)
+        const searchInput = document.querySelector(`.search-input`)
+
+        const toggleSearch = event => {
+            event.stopPropagation();
+
+            if (!event.target.closest('.search-input')) {
+
+                searchInput.classList.toggle('active');
+
+                searchInput.classList.contains('active')
+                    ? document.addEventListener('click', toggleSearch)
+                    : document.removeEventListener('click', toggleSearch);
+            }
+
+            // search input toggle on/off
+            if (!event.target.closest('.search-input')) {
+
+                searchInput.classList.toggle('search-bg');
+
+                searchInput.classList.contains('search-bg')
+                    ? document.addEventListener('click', toggleSearch)
+                    : document.removeEventListener('click', toggleSearch);
+            }
+
+            // interchanging color icon
+            searchContainer.classList.add('search-bg')
+            searchIcon1.classList.add('hidden')
+            searchIcon2.classList.remove('hidden')
+
+        }
+
+        // interchanging icon color functions
+        searchIcon1.addEventListener('click', toggleSearch);
+        window.addEventListener('click', (e) => {
+            e.preventDefault()
+            searchIcon1.classList.remove('hidden')
+            searchIcon2.classList.add('hidden')
+            searchContainer.classList.remove('search-bg')
+        })
+
+    </script>
+
+    <script type="module">
+
+        // swiper js
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                340: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                1024: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 25,
+                },
+            },
+        });
+
+
+        // dropdown navbar
+        // Initialization for ES Users
+        import {
+            Dropdown,
+            initTE,
+        } from "tw-elements";
+
+        initTE({ Dropdown });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
